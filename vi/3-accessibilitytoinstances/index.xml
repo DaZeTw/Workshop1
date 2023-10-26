@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chuẩn bị AWS Cloudfront on AWS System Manager</title>
+    <link>/vi/3-accessibilitytoinstances/</link>
+    <description>Recent content in Chuẩn bị AWS Cloudfront on AWS System Manager</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language><atom:link href="/vi/3-accessibilitytoinstances/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tạo AWS Cloudfront </title>
+      <link>/vi/3-accessibilitytoinstances/3.1-create-aws-cloudfront/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/vi/3-accessibilitytoinstances/3.1-create-aws-cloudfront/</guid>
+      <description>Nhập Cloudfront ở thanh tìm kiếm service trên AWS Management Console sau đó chọn Cloudfront Chọn Create a CloudFront distribution. Ở mục Origin domain, chọn S3 bucket bạn đã tạo. Ở mục Origin access, chọn Origin access control settings. Chọn Create control setting và sau đó chọn Create. Ở mục Viewer protocol policy, chọn HTTPS only và chọn vô hiệu hóa Web Application Firewall. Ở mục Default root object, nhập index.</description>
+    </item>
+    
+  </channel>
+</rss>

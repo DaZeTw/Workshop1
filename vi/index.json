@@ -1,0 +1,85 @@
+[
+{
+	"uri": "/vi/",
+	"title": "Session Management",
+	"tags": [],
+	"description": "",
+	"content": "Sử dụng S3 bucket và Cloudfront để vận hành một website với Sanity API Tổng quan Trong bài workshop này, chúng ta sẽ tạo một website đơn giản bằng React và Sanity API, kết hợp với các dịch vụ của AWS như: AWS Cloudfront, Amazon S3 (Simple Storage Service)\nAmazon S3: Là một dịch vụ lưu trữ đám mây của AWS. Nó cung cấp khả năng lưu trữ không giới hạn cho các đối tượng dữ liệu như hình ảnh, video, tệp tin và dữ liệu lưu trữ.\nAWS CloudFront: Là một dạng Content Delivery Network(CDN) giúp tăng tốc độ tải một trang web tĩnh hoặc động đến với user.\nContent Giới thiệu Chuẩn bị AWS S3 Chuẩn bị AWS Cloudfront Dọn dẹp tài nguyên "
+},
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Website sẽ sử dụng AWS S3 để lưu trữ dữ liệu như hình ảnh, video của website. Chúng ta sẽ sử dụng AWS Cloudfront liên kết với S3 bucket để lấy dữ liệu và thông tin để host và cung cấp API key cho đường link của cloudfront để lấy dữ liệu từ API của Sanity.\nSơ đồ bên dưới miêu tả kiến trúc của website: "
+},
+{
+	"uri": "/vi/3-accessibilitytoinstances/3.1-create-aws-cloudfront/",
+	"title": "Tạo AWS Cloudfront ",
+	"tags": [],
+	"description": "",
+	"content": " Nhập Cloudfront ở thanh tìm kiếm service trên AWS Management Console sau đó chọn Cloudfront Chọn Create a CloudFront distribution. Ở mục Origin domain, chọn S3 bucket bạn đã tạo. Ở mục Origin access, chọn Origin access control settings. Chọn Create control setting và sau đó chọn Create. Ở mục Viewer protocol policy, chọn HTTPS only và chọn vô hiệu hóa Web Application Firewall. Ở mục Default root object, nhập index.html. Chọn Create distribution. Đợi khoảng 5 phút để quá trình được hoàn thành.\n"
+},
+{
+	"uri": "/vi/2-prerequiste/2.1-createec2/",
+	"title": "Tạo S3 bucket",
+	"tags": [],
+	"description": "",
+	"content": "Tạo S3 bucket Nhập S3 ở thanh tìm kiếm service trên AWS Management Console sau đó chọn S3. 2. Chọn Create bucket.\n3. Đặt tên cho bucket là aws-host-website-react và thay đổi region thành ap-southeast-1. Mọi thiết lập còn lại để mặc định và chọn Create bucket. Đợi khoảng 3 phút để quá trình hoàn thành.\n"
+},
+{
+	"uri": "/vi/2-prerequiste/",
+	"title": "Chuẩn bị AWS S3",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, ta sẽ tạo 1 S3 bucket và sau đó sẽ tải thông tin website lên S3 bucket\nNội dung Tạo S3 bucket Tải dữ liệu lên S3 bucket "
+},
+{
+	"uri": "/vi/3-accessibilitytoinstances/3.2-private-instance/",
+	"title": "Điều chỉnh quyền truy cập cho Cloudfront",
+	"tags": [],
+	"description": "",
+	"content": " Sau khi tạo Cloudfront Distribution, chọn Copy policy và Go to S3 bucket permissions to update policy trong thông báo hiện lên. Chọn Edit. Dán chính sách vào Policy board và chọn Save changes. Nếu bạn chỉ muốn host một website tĩnh với không có API nào thêm thì đây là bước cuối cùng bạn cần làm.\n"
+},
+{
+	"uri": "/vi/3-accessibilitytoinstances/3.3-connect-cloudfront-with-sanity/",
+	"title": "Kết nối Cloudfront với Sanity",
+	"tags": [],
+	"description": "",
+	"content": " Vào thư mục chứa sanity API. Chạy lệnh Sanity manage trong Terminal. Chọn API. Chọn Add CORS Origin. Nhập Cloudfront link vào mục Origin Chọn Allow Credentials và chọn Save. "
+},
+{
+	"uri": "/vi/2-prerequiste/2.2-createiamrole/",
+	"title": "Tải dữ liệu lên S3 bucket",
+	"tags": [],
+	"description": "",
+	"content": "Tải dữ liệu lên S3 bucket Chọn bucket aws-host-website-react . Chọn Upload. Thêm và file và folder bạn muốn tải lên. Add files: Chọn add file và tải các file đó lên. Add folder: Chọn add folder và tải các folder đó lên. Chọn Upload. Đợi cho quá trình hoàn tất và chọn close khi hoàn thành. "
+},
+{
+	"uri": "/vi/3-accessibilitytoinstances/",
+	"title": "Chuẩn bị AWS Cloudfront",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, ta sẽ tạo Cloudfront để host website được lưu trong S3 bucket. Sau đó, ta sẽ điều chỉnh quyền truy cập của Sanity với AWS Cloudfront.\nNội dung Tạo AWS Cloudfront Điều chỉnh quyền truy cập cho Cloudfront Kết nối Cloudfront với Sanity "
+},
+{
+	"uri": "/vi/4-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ làm theo những bước sau để dọn dẹp tài nguyên đã tạo trong workshop này.\nXóa S3 bucket Truy cập vào S3 và chọn S3 bucket đã tạo trong workshop. Sau đó, chọn Empty. Nhập delete permanently và chọn Empty. Chọn S3 bucket đã tạo trong workshop. Sau đó, chọn Delete. Nhập tên bucket aws-host-website-react. Sau đó, chọn Delete bucket để xóa bucket. Xóa Cloudfront Distribution Truy cập vào Cloudfront và chọn Distribution đã tạo trong workshop. Sau đó, chọn Disable. Chọn Disable. Chọn Delete. "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

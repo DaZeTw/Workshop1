@@ -1,0 +1,85 @@
+[
+{
+	"uri": "/",
+	"title": "Session Management",
+	"tags": [],
+	"description": "",
+	"content": "Use cloudfront and S3 bucket to host a static portfolio website with Sanity API Overall In this workshop, we will develop a static portfolio website using React and Sanity API. The website will be stored and distributed through AWS services: Amazon S3 (Simple Storage Service) and AWS CloudFront.\nAmazon S3: This is AWS\u0026rsquo;s cloud storage service that offers scalable storage for different types of data like images, videos, and files.\nAWS CloudFront: A Content Delivery Network (CDN) from AWS, CloudFront accelerates the loading speed of your website.\nContent Introduction Preparing AWS S3 Preparing AWS Cloudfront Clean up resources "
+},
+{
+	"uri": "/3-accessibilitytoinstances/3.1-create-aws-cloudfront/",
+	"title": "Create AWS Cloudfront ",
+	"tags": [],
+	"description": "",
+	"content": " Search for and select CloudFront in the AWS Management Console.\nClick Create a CloudFront distribution. Under Origin domain, choose your S3 bucket you have created.\nUnder Origin access, choose Origin access control settings. Click Create control setting and then click Create. In Viewer protocol policy section, choose HTTPS only and disable Web Application Firewall. In Default root object, enter index.html. Click Create distribution.\nWait for about 5 minutes for the process to complete.\n"
+},
+{
+	"uri": "/2-prerequiste/2.1-createec2/",
+	"title": "Create S3 bucket",
+	"tags": [],
+	"description": "",
+	"content": "Create S3 bucket 1.Navigate to the AWS Management Console, search for and select S3. 2.Click Create bucket. 3.Name for the bucket: aws-host-website-react and change the region to ap-southeast-1. Leave other configurations as default and click Create bucket. Wait for about 3 minutes for the process to complete.\n"
+},
+{
+	"uri": "/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "The website will utilize AWS S3 for storing multimedia elements like images and videos. We\u0026rsquo;ll link AWS CloudFront to the S3 bucket to fetch this data and provide an API key for the CloudFront link to retrieve information from the Sanity API.\nThe diagram below illustrates the website architecture: "
+},
+{
+	"uri": "/3-accessibilitytoinstances/3.2-private-instance/",
+	"title": "Ajust permissions for Cloudfront",
+	"tags": [],
+	"description": "",
+	"content": " After create distribution, click Copy policy and Go to S3 bucket permissions to update policy in the pop up. Click Edit. Paste the policy Policy board and click Save changes. If you only want to host a static website with no additional API, this is the last step to host your website.\n"
+},
+{
+	"uri": "/3-accessibilitytoinstances/3.3-connect-cloudfront-with-sanity/",
+	"title": "Connect Cloudfront with Sanity",
+	"tags": [],
+	"description": "",
+	"content": " Go to the directory containing the sanity API. Run the Sanity manage command in Terminal. Click on API. Click Add CORS Origin. Enter the Cloudfront link into Origin Click on Allow Credentials and click Save. "
+},
+{
+	"uri": "/2-prerequiste/",
+	"title": "Preparing AWS S3 ",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we gonna create a S3 bucket, then upload our website into S3 bucket.\nContent Create S3 bucket Upload Data to S3 "
+},
+{
+	"uri": "/2-prerequiste/2.2-createiamrole/",
+	"title": "Upload Data to S3",
+	"tags": [],
+	"description": "",
+	"content": "Upload Data to S3 Open the bucket aws-host-website-react . Click Upload. Add the files or folders you wish to upload. Add files: Click add files and upload these files Add folder: Click add folder and upload that folder Click Upload. Wait for uploading and click close when finish. "
+},
+{
+	"uri": "/3-accessibilitytoinstances/",
+	"title": "Preparing AWS Cloudfront",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will connect AWS Cloudfront with S3 bucket created and Sanity API\nContent Create AWS Cloudfront Adjust permissions for Cloudfront Connect Cloudfront with Sanity "
+},
+{
+	"uri": "/4-cleanup/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": "We will take the following steps to delete the resources we created in this exercise.\nDelete S3 bucket Access S3 and select the S3 bucket created in the lab. Then select Empty Type delete permanently and select Empty. Select the S3 bucket created in the lab. Then select Delete. Enter the bucket name aws-host-website-react. Then select Delete bucket to proceed with deleting the S3 bucket. Delete Cloudfront Distribution Access Cloudfront and select the Distribution created in the lab. Then select Disable. Click Disable. Click Delete. "
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

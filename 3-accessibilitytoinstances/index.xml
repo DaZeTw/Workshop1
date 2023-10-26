@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Preparing AWS Cloudfront on AWS System Manager</title>
+    <link>/3-accessibilitytoinstances/</link>
+    <description>Recent content in Preparing AWS Cloudfront on AWS System Manager</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/3-accessibilitytoinstances/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create AWS Cloudfront </title>
+      <link>/3-accessibilitytoinstances/3.1-create-aws-cloudfront/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/3-accessibilitytoinstances/3.1-create-aws-cloudfront/</guid>
+      <description>Search for and select CloudFront in the AWS Management Console.
+Click Create a CloudFront distribution. Under Origin domain, choose your S3 bucket you have created.
+Under Origin access, choose Origin access control settings. Click Create control setting and then click Create. In Viewer protocol policy section, choose HTTPS only and disable Web Application Firewall. In Default root object, enter index.html. Click Create distribution.
+Wait for about 5 minutes for the process to complete.</description>
+    </item>
+    
+  </channel>
+</rss>
